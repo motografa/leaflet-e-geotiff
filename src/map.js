@@ -7,34 +7,25 @@ export default class map extends Component{
         super(props)
 
         this.state={
-            data:'../data/cite-G3802_A2_1883_S7.tif'
+          // tiffImage:'/../data/wind_direction.tif'
+          tiffImage:"https://stuartmatthews.github.io/leaflet-geotiff/tif/wind_direction.tif"
+
         }
 
         this.layerRef = React.createRef();
         this.options = {
           band: 0,
-          colorScale: 'rainbow',
-          clampLow: true,
-          clampHigh: true,
           displayMin: 0,
-          displayMax: 100
+          displayMax: 1000,
+          colorScale: "rainbow",
+          clampLow: false,
+          clampHigh: false
         }
     }
 
   render() {
-    const position = [51.505, -0.09]
-    const windSpeedOptions = {
-      band: 0,
-      displayMin: 0,
-      displayMax: 30,
-      name: "Wind speed",
-      colorScale: "rainbow",
-      clampLow: false,
-      clampHigh: true
-      //vector:true
-    };
-
-
+    const position = [-25.688978, 136.055747]
+    
     return (
         <>
             
@@ -44,7 +35,10 @@ export default class map extends Component{
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            <PlottyGeotiffLayer layerRef = { this.layerRef } url = { this.state.data } options = { windSpeedOptions }/>
+            <PlottyGeotiffLayer 
+              layerRef = { this.layerRef } 
+              url = { this.state.tiffImage} 
+              options = { this.options }/>
 
             <Marker position={position}>
             <Popup>
