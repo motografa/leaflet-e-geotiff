@@ -15,8 +15,6 @@ class GeotiffLayer extends MapLayer{
     componentDidMount() {
         const { map } = this.props.leaflet;
         this.leafletElement.addTo(map);
-
-        console.log(this.props)
     }
 }
 

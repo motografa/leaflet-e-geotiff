@@ -5,10 +5,14 @@
   "dependencies": {
     "leaflet": "^1.5.1",
     "leaflet-geotiff": "^0.2.0",
+    "moment": "^2.24.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-leaflet": "^2.5.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "react-visjs-timeline": "^1.6.0",
+    "vis": "^4.21.0-EOL",
+    "vis-timeline": "^6.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
